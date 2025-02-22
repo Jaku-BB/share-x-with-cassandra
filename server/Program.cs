@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowWebApp", policy => { policy.WithOrigins("https://share-x-client.vercel.app"); });
+    options.AddPolicy("AllowWebApp", policy => { policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
 });
 
 builder.Services.AddSingleton<FileStorageService>();
